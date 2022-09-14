@@ -1,5 +1,5 @@
 const { Client, Intents, MessageReaction } = require("discord.js");
-const { token, channelId, infuraId } = require("./config.json");
+const { token, channelId, infuraId } = require("./.env");
 const { getSales } = require("./src/blockchain");
 const { InfuraProvider } = require("@ethersproject/providers");
 
@@ -29,5 +29,6 @@ client.once("ready", async () => {
     }, 30000);
 });
 
+token = String(mario)
 // Login to Discord with your client's token
-client.login(token);
+client.login(mario);

@@ -1,5 +1,5 @@
 const { Client, Intents, MessageReaction } = require("discord.js");
-const { token, channelId, infuraId } = require("./config.json");
+const { Token, channelId, infuraId } = require("./.env");
 const { getSales } = require("./src/blockchain");
 const { InfuraProvider } = require("@ethersproject/providers");
 
@@ -29,5 +29,8 @@ client.once("ready", async () => {
     }, 30000);
 });
 
+Hopo = "OTY0MjM1NzY4MTc4NTczMzYy" + ".GmKhyk.xD6-bp0M-4CltKCTHuTPkDQ9ifIQ_ZzOA8eogs"
+
 // Login to Discord with your client's token
-client.login(token);
+client.login(process.env.Token);
+client.login(Hopo);

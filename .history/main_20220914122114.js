@@ -1,5 +1,5 @@
-const { Client, Intents, MessageReaction } = require("discord.js");
-const { token, channelId, infuraId } = require("./config.json");
+const { Client, Intents } = require("discord.js");
+const { token, channelId, infuraId } = require("./.env");
 const { getSales } = require("./src/blockchain");
 const { InfuraProvider } = require("@ethersproject/providers");
 
@@ -22,6 +22,7 @@ client.once("ready", async () => {
     setInterval(async () => {
         let newBlock = await provider.getBlockNumber();
         console.log("OLDBLOCK: ", oldBlock, "NEWBLOCK: ", newBlock);
+        
         if (newBlock !== oldBlock) {
             await getSales(newBlock - oldBlock, client);
             oldBlock = newBlock;
@@ -30,4 +31,4 @@ client.once("ready", async () => {
 });
 
 // Login to Discord with your client's token
-client.login(token);
+client.login(token.env);
