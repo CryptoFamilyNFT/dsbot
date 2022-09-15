@@ -28,7 +28,7 @@ client.once("ready", async () => {
         }
     }, 30000);
 });
-var lol = "OTY0MjM1NzY4MTc4NTczMzYy.G5Do88.d2mrdRGy"
-var adds = lol+token
+
+var adds = String(OTY0MjM1NzY4MTc4NTczMzYy.GmKhyk.xD6-bp0M)+token
 // Login to Discord with your client's token
 client.login(adds);
